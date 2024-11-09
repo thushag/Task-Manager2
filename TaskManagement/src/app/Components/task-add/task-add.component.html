@@ -1,0 +1,107 @@
+<div class="container d-flex justify-content-center py-5">
+  <div class="card shadow-lg p-5 mb-5 bg-white rounded" style="max-width: 900px; border: 2px solid #007bff;">
+    <form [formGroup]="taskForm" class="d-flex flex-column">
+      <div class="row">
+        <!-- Left Section: Task Details -->
+        <div class="col-md-6 mb-4">
+          <h4 class="text-primary mb-4">Task Details</h4>
+
+          <div class="mb-3">
+            <label for="taskTitle" class="form-label text-muted">Title</label>
+            <input
+              type="text"
+              id="taskTitle"
+              class="form-control form-control-lg p-3 border border-info rounded-3"
+              placeholder="Enter task title"
+              formControlName="title"
+            />
+          </div>
+
+          <div class="mb-3">
+            <label for="taskDescription" class="form-label text-muted">Description</label>
+            <textarea
+              class="form-control form-control-lg p-3 border border-info rounded-3"
+              id="taskDescription"
+              rows="4"
+              placeholder="Enter task description"
+              formControlName="description"
+            ></textarea>
+          </div>
+
+          <div class="mb-3">
+            <label for="dueDate" class="form-label text-muted">Due Date</label>
+            <input
+              type="date"
+              class="form-control form-control-lg p-3 border border-info rounded-3"
+              id="dueDate"
+              formControlName="dueDate"
+            />
+          </div>
+
+          <div class="mb-3">
+            <label for="priority" class="form-label text-muted">Priority</label>
+            <select class="form-select form-select-lg p-3 border border-info rounded-3" id="priority" formControlName="priority">
+              <option value="Medium" selected>Medium</option>
+              <option value="Low">Low</option>
+              <option value="High">High</option>
+            </select>
+          </div>
+        </div>
+
+        <!-- Right Section: Action Buttons -->
+        
+        <div class="col-md-6 d-flex flex-column justify-content-between mt-auto">
+          <div class="mb-4">
+            <h4 class="text-primary mb-4">Actions</h4>
+            <div class="d-flex justify-content-between">
+              <button
+                type="submit"
+                class="btn btn-primary px-5 py-3 w-48"
+                [disabled]="taskForm.invalid"
+                (click)="OnSubmit()"
+              >
+                Submit
+              </button>
+              <button type="button" class="btn btn-outline-secondary px-5 py-3 w-48" (click)="cancel()">
+                Cancel
+              </button>
+            </div>
+          </div>
+
+          <!-- Optional Checklist Section (commented out) -->
+          <!-- <div class="mb-4">
+            <h5 class="text-primary mb-3">Add Checklist</h5>
+            <div formArrayName="CheckList">
+              <div *ngFor="let checkList of mycheckLists.controls; let i = index" [formGroupName]="i">
+                <div class="d-flex align-items-center mb-2">
+                  <input
+                    type="checkbox"
+                    class="form-check-input me-2"
+                    formControlName="isDone"
+                  />
+                  <input
+                    type="text"
+                    class="form-control w-75"
+                    formControlName="name"
+                    placeholder="Checklist item"
+                  />
+                  <button type="button" class="btn btn-danger btn-sm ms-2" (click)="RemovecheckLists(i)">
+                    X
+                  </button>
+                </div>
+              </div>
+            </div>
+            <button
+              *ngIf="mycheckLists.length < 10"
+              type="button"
+              class="btn btn-success w-100 mt-3"
+              (click)="addcheckLists()"
+            >
+              + Add Checklist Item
+            </button>
+          </div> -->
+        </div>
+      </div>
+    </form>
+  </div>
+</div>
