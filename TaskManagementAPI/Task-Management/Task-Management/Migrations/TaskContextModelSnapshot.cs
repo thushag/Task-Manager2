@@ -22,6 +22,38 @@ namespace Task_Management.Migrations
 
             SqlServerModelBuilderExtensions.UseIdentityColumns(modelBuilder);
 
+            modelBuilder.Entity("Task_Management.Entity.Address", b =>
+                {
+                    b.Property<int>("id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("id"));
+
+                    b.Property<string>("AddressLine1")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("AddressLine2")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("City")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<int?>("userId")
+                        .HasColumnType("int");
+
+                    b.HasKey("id");
+
+                    b.HasIndex("userId")
+                        .IsUnique()
+                        .HasFilter("[userId] IS NOT NULL");
+
+                    b.ToTable("Address");
+                });
+
             modelBuilder.Entity("Task_Management.Entity.TaskItem", b =>
                 {
                     b.Property<int>("Id")
@@ -77,6 +109,21 @@ namespace Task_Management.Migrations
                     b.HasKey("Id");
 
                     b.ToTable("User");
+                });
+
+            modelBuilder.Entity("Task_Management.Entity.Address", b =>
+                {
+                    b.HasOne("Task_Management.Entity.User", "User")
+                        .WithOne("Address")
+                        .HasForeignKey("Task_Management.Entity.Address", "userId");
+
+                    b.Navigation("User");
+                });
+
+            modelBuilder.Entity("Task_Management.Entity.User", b =>
+                {
+                    b.Navigation("Address")
+                        .IsRequired();
                 });
 #pragma warning restore 612, 618
         }

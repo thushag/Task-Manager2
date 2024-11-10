@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "X:\\Myfiles\\Activity41New\\TaskManagementAPI\\Task-Management\\Task-Management\\Task-Management.csproj": {}
+    "X:\\Myfiles\\Activity41New\\clone\\Task-Manager2\\TaskManagementAPI\\Task-Management\\Task-Management\\Task-Management.csproj": {}
   },
   "projects": {
-    "X:\\Myfiles\\Activity41New\\TaskManagementAPI\\Task-Management\\Task-Management\\Task-Management.csproj": {
+    "X:\\Myfiles\\Activity41New\\clone\\Task-Manager2\\TaskManagementAPI\\Task-Management\\Task-Management\\Task-Management.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "X:\\Myfiles\\Activity41New\\TaskManagementAPI\\Task-Management\\Task-Management\\Task-Management.csproj",
+        "projectUniqueName": "X:\\Myfiles\\Activity41New\\clone\\Task-Manager2\\TaskManagementAPI\\Task-Management\\Task-Management\\Task-Management.csproj",
         "projectName": "Task-Management",
-        "projectPath": "X:\\Myfiles\\Activity41New\\TaskManagementAPI\\Task-Management\\Task-Management\\Task-Management.csproj",
+        "projectPath": "X:\\Myfiles\\Activity41New\\clone\\Task-Manager2\\TaskManagementAPI\\Task-Management\\Task-Management\\Task-Management.csproj",
         "packagesPath": "C:\\Users\\UT01138\\.nuget\\packages\\",
-        "outputPath": "X:\\Myfiles\\Activity41New\\TaskManagementAPI\\Task-Management\\Task-Management\\obj\\",
+        "outputPath": "X:\\Myfiles\\Activity41New\\clone\\Task-Manager2\\TaskManagementAPI\\Task-Management\\Task-Management\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\UT01138\\AppData\\Roaming\\NuGet\\NuGet.Config",

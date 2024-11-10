@@ -25,14 +25,14 @@ namespace Task_Management.Controllers
         [HttpGet]
         public async Task<ActionResult<IEnumerable<User>>> GetUser()
         {
-            return await _context.User.ToListAsync();
+            return await _context.User.Include(a => a.Address).ToListAsync();
         }
 
         // GET: api/Users/5
         [HttpGet("{id}")]
         public async Task<ActionResult<User>> GetUser(int id)
         {
-            var user = await _context.User.FindAsync(id);
+            var user = await _context.User.Include(a =>a.Address).FirstOrDefaultAsync(a=> a.Id == id);
 
             if (user == null)
             {
@@ -88,7 +88,7 @@ namespace Task_Management.Controllers
         [HttpDelete("{id}")]
         public async Task<IActionResult> DeleteUser(int id)
         {
-            var user = await _context.User.FindAsync(id);
+            var user = await _context.User.Include(a => a.Address).FirstOrDefaultAsync(a => a.Id == id);
             if (user == null)
             {
                 return NotFound();

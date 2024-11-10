@@ -12,7 +12,7 @@ const routes: Routes = [
   {path:'edit/:id',component:TaskEditComponent},
   {path:'users',component:UserListComponent},
   {path:'user-add',component:UserAddComponent},
-  // {path:'user-edit/:id',component:UserAddComponent},
+   {path:'user-edit/:id',component:UserAddComponent},
   
 ];
 

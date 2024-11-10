@@ -21,7 +21,7 @@ import { ToastrModule } from 'ngx-toastr';
    TaskAddComponent,
     TaskEditComponent,
     UserAddComponent,
-   
+    UserListComponent
   ],
   imports: [
     BrowserModule,

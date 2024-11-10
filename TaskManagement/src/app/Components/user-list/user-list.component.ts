@@ -46,4 +46,8 @@ loadUser() {
 onEdit(userId: number){
   this.router.navigate(['user-edit',userId])
 }
+
+AddUser(){
+  this.router.navigate(['user-add'])
+}
 }

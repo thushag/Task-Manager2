@@ -58,7 +58,7 @@ onSubmit() {
 
   if (this.isEditMode == true) {
     user.id = this.userId;
-    this.userService.updateUser(user).subscribe(data => {
+    this.userService.updateUser(user).subscribe((data) => {
       this.toastr.success("User is updated successfully");
       this.router.navigate(["/users"]);
     });
